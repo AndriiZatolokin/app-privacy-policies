@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andriizatolokin.github.io/app-privacy-policies/sitemap.xml
