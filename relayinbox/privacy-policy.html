@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="RelayInbox — Privacy Policy">
+    <title>RelayInbox — Privacy Policy</title>
+    <link rel="canonical" href="https://andriizatolokin.github.io/app-privacy-policies/relayinbox/privacy-policy.html">
+    <link rel="alternate" hreflang="en" href="https://andriizatolokin.github.io/app-privacy-policies/relayinbox/privacy-policy.html">
+<link rel="alternate" hreflang="uk" href="https://andriizatolokin.github.io/app-privacy-policies/relayinbox/uk/privacy-policy.html">
+<link rel="alternate" hreflang="x-default" href="https://andriizatolokin.github.io/app-privacy-policies/relayinbox/privacy-policy.html">
+    <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="policy-page relayinbox-page">
+<header class="site-header"><div class="shell header-inner">
+    <a class="brand" href="./"><span>RelayInbox</span></a>
+    <nav class="language-nav" aria-label="Language"><a href="privacy-policy.html" lang="en" aria-current="page">EN</a> <a href="uk/privacy-policy.html" lang="uk">УК</a></nav>
+</div></header>
+<main class="policy-main">
+    <h1>Privacy Policy</h1>
+<p><b>Effective date:</b> 2026-09-29<br><b>Developer:</b> Andrii Zatolokin<br><b>Privacy contact:</b> <a href="mailto:zatolokinandrey@gmail.com">zatolokinandrey@gmail.com</a></p>
+<p>RelayInbox forwards incoming SMS from your Android phone to the Telegram bot and chat you configure. Optional local translation, call state alerts, and battery alerts are available. This policy covers the current app, without developer accounts, a RelayInbox backend, subscriptions, or ads.</p>
+<h2 id="data">Data used by the app</h2>
+<p>RelayInbox processes SMS sender identifiers, message text, received time, and SIM slot metadata when Android provides it. It stores your Telegram bot token and chat ID, forwarding and filter settings, pending delivery data, generated Telegram message parts, delivery checkpoints, and recent history previews.</p>
+<p>Optional alerts process call state (ringing, active, ended), battery percentage, and charging state. Call alerts do not read call logs, contacts, or caller numbers. Translation uses your source/target language, SIM scope, and output settings. Device model and event times may appear in forwarded service messages or diagnostics.</p>
+<h2 id="telegram">Forwarding to Telegram</h2>
+<p>After you configure Telegram, grant SMS access, and enable forwarding, selected SMS content and metadata are transmitted to Telegram using your bot token and destination chat ID. Optional service alerts and manually triggered test/simulated events also send their configured content to that destination. RelayInbox does not send SMS to a developer-owned server or sell personal data.</p>
+<p>Telegram and people with access to the destination chat can read delivered messages. Telegram Bot API connections use HTTPS; bot messages are not end-to-end encrypted. Telegram's own terms and privacy policy govern its handling and retention of delivered data.</p>
+<h2 id="translation">Local translation and Google SDK services</h2>
+<p>Google ML Kit performs language identification and translation on the device after the required models are available. SMS text is not uploaded to Google for translation. Models may be downloaded from Google over Wi-Fi, including when you start a download manually.</p>
+<p>The included Google SDKs can send technical data to Google: device/app information, installation identifiers, performance and error diagnostics, SDK usage events, input/output sizes, and identified or configured languages. Google uses these for diagnostics and usage analytics; this is distinct from uploading SMS text. The app does not offer a separate SDK telemetry opt-out, and SDK initialization/model checks can occur even when SMS translation is disabled.</p>
+<p>Original + translation sends the original SMS first and the translation or an unavailable note afterwards. Translation only waits for local translation and falls back to the original with an unavailable note if it cannot complete. RelayInbox has no developer-operated analytics or crash reporting service, but the Google SDK technical collection described above remains applicable.</p>
+<h2 id="storage">Local storage and security</h2>
+<p>Settings and delivery state are stored in the app's private storage. Telegram credentials use Android Keystore-backed encryption when available. If Keystore fails, the app uses less protective app-private fallback storage; this is not equivalent to Keystore encryption. The local SQLite message queue and history are not separately encrypted by RelayInbox. Android's device protection still applies, but cannot protect every compromised-device scenario.</p>
+<p>Undelivered messages keep the sender, body, time, SIM/translation settings, generated message parts, and checkpoints needed for retries. Full queued payloads and structured SMS fields are cleared after successful delivery. Short history previews and delivery metadata remain for 30 days after completion or filtering. Cleanup runs when the app opens and during periodic recovery, so Android scheduling may delay deletion.</p>
+<p>Clear completed history removes completed/filtered entries earlier while preserving undelivered messages. Pending messages remain until delivered or until you clear app data or uninstall. Local notification previews can display matching SMS content on your phone. Treat bot tokens as passwords and revoke a compromised token in Telegram.</p>
+<h2 id="permissions">Android permissions</h2>
+<p>Receive SMS is required for incoming-message forwarding, with an in-app disclosure before permission is requested. Internet/network state support Telegram delivery and Google SDK services. Run at boot restarts delivery recovery. Background scheduling may use Android wake locks and foreground-service infrastructure.</p>
+<p>Phone state is optional and requested for enabled call alerts or ringing-call important alerts. Notification permission is optional for local important alerts. When you choose the battery reliability action, RelayInbox can ask Android to exempt it from battery optimization or open the relevant system settings. You control that system decision.</p>
+<h2 id="controls">Your controls and deletion</h2>
+<p>You can pause forwarding, change/remove Telegram configuration, disable translation or optional alerts, change filters, and revoke Android permissions. Disabling forwarding does not delete messages already sent to Telegram or guarantee that queued delivery data is erased.</p>
+<p>Use Messages > Clear completed history to remove completed local history. Clear app storage in Android settings or uninstall to remove all local configuration, pending messages, and history. RelayInbox has no user account to delete. Remove already delivered messages using Telegram's controls; clearing RelayInbox does not delete Telegram copies or technical data already processed by Google. Third-party retention and deletion are governed by those services.</p>
+<h2 id="third-parties">Third-party policies</h2>
+<p>See <a href="https://telegram.org/privacy">Telegram's privacy policy</a>, <a href="https://policies.google.com/privacy">Google's privacy policy</a>, and <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit's data disclosure</a>. The online policy is hosted on GitHub Pages; visiting it sends the browser's request to GitHub under <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>. The bundled in-app policy can be read offline without visiting the website.</p>
+<h2 id="contact">Contact and changes</h2>
+<p>For privacy questions, contact the developer at the email listed above. If you email support, the developer receives the information you choose to include and uses it to answer your request. Do not include private SMS or bot tokens. This policy may change as app functionality or service practices change; the effective date identifies this version.</p>
+</main>
+<footer class="site-footer"><div class="shell footer-inner"><span>© 2026 Andrii Zatolokin</span><a href="../index.html">All apps</a></div></footer>
+</body>
+</html>
